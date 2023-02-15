@@ -25,7 +25,7 @@
 
 
 CREATE OR ALTER PROCEDURE spRegisterUser( @IdUser VARCHAR(50), @Name VARCHAR(50), @Email VARCHAR(50), @Password VARCHAR(50), @Address VARCHAR(50),
-                @FullName VARCHAR(50),@PhoneNo VARCHAR(50),@country VARCHAR(50))
+                @FullName VARCHAR(50),@PhoneNo VARCHAR(50),@country VARCHAR(50),@Admin VARCHAR(10))
 AS
 
 BEGIN
@@ -38,7 +38,8 @@ INSERT INTO users
     address,
     fullname,
     phoneNo,
-    country )
+    country,
+    isAdmin )
 VALUES
     (@IdUser ,
      @Name,
@@ -47,7 +48,8 @@ VALUES
      @Address,
      @FullName,
      @PhoneNo,
-     @country)   
+     @country,
+     @Admin)   
 END;         
 
 EXECUTE spRegisterUser

@@ -13,9 +13,9 @@ const helperDB = new DatabaseHelper()
 export const addProductsToCart = async(req:Request, res:Response) => {
 
     try {
-        const {cardID,carBrand,carID,prices,quantity}=req.body
-        const carToAdd = {cardID:uid() as string ,carBrand,userId:req.body.user.userId,carID,prices,quantity}
-
+        const cardID = uid()
+        const {carBrand,carId,prices,quantity}=req.body
+        const carToAdd = {cardID:uid() as string ,carBrand,userId:req.body.user.userId,carId,prices,quantity}
         const{error}=cartSchema.validate(carToAdd)
 
         if(error){
@@ -31,4 +31,32 @@ export const addProductsToCart = async(req:Request, res:Response) => {
     }
 
 }
+export const subtractProducts = async(req:Request, res:Response) => {
 
+    try {
+        const addTyp = req.params.cardID
+        const result = await (await helperDB.exec('SubtractCar',{CardID:addTyp})).recordset
+        res.status(200).json(result)
+    } catch (error:any) {
+        res.status(500).json(error.message)
+    }
+
+}
+export const addProducts = async(req:Request, res:Response) => {
+
+    try {
+        const addTyp = req.params.cardID
+        const result = await (await helperDB.exec('AddCar',{CardID:addTyp})).recordset
+        res.status(200).json(result)
+    } catch (error:any) {
+        res.status(500).json(error.message)
+    }
+
+}
+
+
+
+
+
+  
+  
