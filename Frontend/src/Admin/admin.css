@@ -139,9 +139,7 @@ body {
 	white-space: nowrap;
 	overflow-x: hidden;
 }
-#sidebar .side-menu.top li.active a {
-	color: red;
-}
+
 #sidebar.hide .side-menu li a {
 	width: calc(48px - (4px * 2));
 	transition: width .3s ease;
@@ -440,3 +438,68 @@ body {
 		min-width: 420px;
 	}
 }
+
+  
+  form input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0px;
+    gap: 12px;
+    width: 548px;
+    height: 55px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  input{
+    border: none;
+    border-bottom: 1px solid black;
+    gap: 3rem;
+    width: 30px;
+  }
+  .reg{
+    background-color: green;
+    align-items: center;
+    width: 20%;
+    height: 40px;
+    margin-left: 10%;
+    border: none;
+	margin-top: 30px;
+  }
+  h1{
+    margin-top: 5%;
+    margin-left: 45%;
+  }
+  h2{
+	margin-top: 5%;
+	margin-left: 15%;
+  }
+  p {
+    margin-top: 20px;
+    margin-left: 45%;
+  }
+  .row{
+    margin-top: 5%;
+    margin-left: 3%;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .delete{
+	background-color: red;
+	width: 20%;
+    height: 40px;
+    margin-left: 10%;
+    border: none;
+	margin-top: 30px;
+  }
+  .update{
+	background-color: #AAAAAA;
+	width: 20%;
+    height: 40px;
+    margin-left: 10%;
+    border: none;
+	margin-top: 30px;
+  }
