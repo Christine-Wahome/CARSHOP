@@ -1,6 +1,7 @@
 import express from 'express'
 import cron from 'node-cron'
 import sendWelcomeEmail from './emailService/email';
+import sendOrderEmail from './emailService/orderConfirmationEmail';
 
 const app= express()
 
@@ -8,6 +9,11 @@ const app= express()
 cron.schedule('*/5 * * * * *', async() => {
   console.log('Checking for a new registration after every 15 Seconds');
   await sendWelcomeEmail()
+});
+
+cron.schedule('*/5 * * * * *', async() => {
+  console.log('Checking for oreder email');
+  await sendOrderEmail()
 });
 
 
