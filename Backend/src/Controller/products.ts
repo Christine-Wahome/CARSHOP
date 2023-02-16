@@ -40,3 +40,40 @@ export const getProducts = async (req:Request, res:Response) => {
       }
 }
 
+export const getCarsBodyShape = async (req:Request, res:Response) => {
+  const bodyType = req.params.bodyType
+  try {
+    const carsByBody = await (await helperDB.exec('getCarByBodyShape', {BodyType:bodyType})).recordset
+    res.status(200).json(carsByBody)
+  } catch (error:any) {
+    res.status(500).json(error.message)
+  }
+}
+export const getCarBrand = async (req:Request, res:Response) => {
+  const brandType = req.params.brand
+  try {
+    const carsByBody = await (await helperDB.exec('getCarByBrand', {Brand:brandType})).recordset
+    res.status(200).json(carsByBody)
+  } catch (error:any) {
+    res.status(500).json(error.message)
+  }
+}
+export const getOneCarProduct = async (req:Request, res:Response) => {
+  const oneCar = req.params.carId
+  try {
+    const carsByBody = await (await helperDB.exec('getOneCar', {CarId:oneCar})).recordset
+    res.status(200).json(carsByBody)
+  } catch (error:any) {
+    res.status(500).json(error.message)
+  }
+}
+export const softDeleteProduct = async (req:Request, res:Response) => {
+  const oneCar = req.params.carId
+  try {
+    const carsByBody = await (await helperDB.exec('softDeleteProduct', {CarId:oneCar})).recordset
+    res.status(200).json(carsByBody)
+  } catch (error:any) {
+    res.status(500).json(error.message)
+  }
+}
+

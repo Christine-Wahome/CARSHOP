@@ -76,7 +76,7 @@ export const login = async (req:ExtendedRequest, res:Response) => {
             const{password,...rest} = property
             return rest
         })
-        const token = jwt.sign(payload[0], process.env.SECRETKEY as string, {expiresIn:'30000'})
+        const token = jwt.sign(payload[0], process.env.SECRETKEY as string, {expiresIn:'3600000s'})
         return res.status(200).json({ message:'user logged in', token})
     } catch (error:any) {
         res.status(500).json(error.message)

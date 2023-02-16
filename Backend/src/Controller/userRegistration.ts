@@ -56,6 +56,8 @@ export const addUsers = async(req:ExtendedRequest,res:Response) => {
        .input('FullName',fullname)
        .input('PhoneNo',phoneNo)
        .input('country',country)
+       
+
        .execute('spRegisterUser')
        res.status(200).json({message:'User Registered'})
   } catch (error: any) {

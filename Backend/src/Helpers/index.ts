@@ -1,5 +1,5 @@
 import Joi from 'joi'
-import { ref } from 'joi'
+
 
 
 
@@ -19,7 +19,8 @@ export const registration = Joi.object({
     fullname:Joi.string(),
     phoneNo:Joi.string(),
     country:Joi.string(),
-    confirmPassword:Joi.equal(ref('password'))
+    isAdmin:Joi.string()
+    
 })
 
 export const loginSchema= Joi.object({
@@ -45,7 +46,7 @@ export const cartSchema = Joi.object({
     cardID: Joi.string().required(),
   carBrand: Joi.string().required(),
   userId: Joi.string().required(),
-  carID: Joi.string().required(),
+  carId: Joi.string().required(),
   prices: Joi.number().required(),
   quantity: Joi.number().required()
 })
