@@ -20,17 +20,7 @@ export const getUsers:RequestHandler = async(req,res) =>{
       }
 
 }
-export const getSpecUser:RequestHandler = async(req,res) =>{
-      
-      try {
-        const pool = await mssql.connect(sqlConfig)
-        const registration:UserRegistrationType[] = await (await (pool.request().execute("SpGetSpecificUser", {userName}))).recordset[0]
-        res.status(200).json(registration)
-      } catch (error:any) {
-        res.status(500).json(error.message)
-      }
 
-}
 
 interface ExtendedRequest extends Request{
   body:{ userId:string , userName:string , email:string , password:string, address:string,

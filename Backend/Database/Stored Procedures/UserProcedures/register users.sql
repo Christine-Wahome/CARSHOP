@@ -1,4 +1,4 @@
-CREATE PROCEDURE spRegisterUser( @IdUser VARCHAR(50), @Name VARCHAR(50), @Email VARCHAR(50), @Password VARCHAR(50), @Address VARCHAR(50))
+CREATE PROCEDURE spRegisterUser( @IdUser VARCHAR(50), @Name VARCHAR(50), @Email VARCHAR(50), @Password VARCHAR(50), @Address VARCHAR(50),@fullname VARCHAR (50),@country VARCHAR (50))
 AS
 
 BEGIN
@@ -8,12 +8,16 @@ INSERT INTO users
     userName ,
     email ,
     password,
-    address )
+    address ,
+    fullname,
+    country)
 VALUES
     (@IdUser ,
      @Name,
      @Email ,
      @Password,
-     @Address )   
+     @Address,
+     @fullname,
+     @country )   
 END 
 

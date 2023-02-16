@@ -3,7 +3,7 @@ const delUserbtn = document.getElementById('delbtn') as HTMLInputElement;
 const addUserbtn = document.getElementById('addbtn') as HTMLInputElement;
 const updateUserbtn = document.getElementById('updatebtn') as HTMLInputElement;
 
-AddUser.addEventListener('click', async (e) => {
+addUserbtn.addEventListener('click', async (e) => {
     e.preventDefault();
 
     const Username = document.getElementById('username') as HTMLInputElement;
@@ -16,7 +16,7 @@ AddUser.addEventListener('click', async (e) => {
     const Country = document.getElementById('country') as HTMLInputElement;
     const IsDeleted = document.getElementById('isDeleted') as HTMLInputElement;
 
-    const Users = await addUsers(Username.value,PhoneNumber.value,Pass.value,Address.value,Fullname.value,EmailAddress.value,Cpass.value,Country.value, IsDeleted)
+    const Users = await addUsers(Username.value,PhoneNumber.value,Pass.value,Address.value,Fullname.value,EmailAddress.value,Cpass.value,Country.value, )
     if(Users){
         window.location.href= 'admin.html'
         console.log(Users);
@@ -24,10 +24,13 @@ AddUser.addEventListener('click', async (e) => {
     }
 })
 
-const addUsers = async(Username:string,PhoneNumber:string,Pass:string,Address:string,Fullname:string,EmailAddress:string,Cpass:string,Country:string,IsDeleted:HTMLInputElement) => {
-    console.log(Username,PhoneNumber,Pass,Address,Fullname,EmailAddress,Cpass,Country,IsDeleted);
-    let response = await fetch("",{
+const addUsers = async(Username:string,PhoneNumber:string,Pass:string,Address:string,Fullname:string,EmailAddress:string,Cpass:string,Country:string) => {
+    console.log(Username,PhoneNumber,Pass,Address,Fullname,EmailAddress,Cpass,Country);
+    let response = await fetch("http://localhost:4000/auth/register",{
         method:"POST",
+        headers: {
+            "content-type": "application/json"
+        },
         body: JSON.stringify({
             Username,
             PhoneNumber,
@@ -37,8 +40,9 @@ const addUsers = async(Username:string,PhoneNumber:string,Pass:string,Address:st
             EmailAddress,
             Cpass,
             Country,
-            IsDeleted: IsDeleted.checked?"1":"0"
+           
         })
+       
         
     })
     if(response.status === 200){
@@ -60,15 +64,7 @@ const getUsers = async () => {
     }
 }
 
-const getOrders = async () => {
-    let response = await fetch("");
-    if (response.status === 200) {
-        let orders = await response.json();
-        return orders;
-    } else {
-        console.log("error");
-    }
-}
+
 
 
 

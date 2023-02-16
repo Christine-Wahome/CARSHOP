@@ -6,4 +6,9 @@ ADD prices DECIMAL(10)
 ALTER TABLE Cars
 ADD pictureUrl VARCHAR(50)
 
+ALTER TABLE Cars
+ADD isDeleted VARCHAR(50)
+
 USE carOrders
+
+SELECT * FROM cars

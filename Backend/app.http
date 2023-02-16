@@ -22,13 +22,13 @@ POST http://localhost:4000/auth/register
 Content-Type: application/json
 
 {
-  "userName":" Wahome",
-  "email": "christinewahome519@gmail.com",
-  "password": "JuAngular123Wer$%",
+  "userName":" roy",
+  "email": "roy19@gmail.com",
+  "password": "Angular123Wer$%",
   "address": "phoneNo",
   "country":"KEnya",
   "fullname":"QWEED",
-  "phoneNo": "123455",
+  "phoneNo": "12355",
   "emailSent":"0",
   "isAdmin":"0"
 }
@@ -42,4 +42,3 @@ Content-Type: application/json
   "password": "12e123Wer$%"
 }
 
-"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzMWY4YzkxZC0zNTc1LTQ0M2YtYTAzNS1kYTUzYmVmOTViMDMiLCJ1c2VyTmFtZSI6IklhbiIsImVtYWlsIjoic2lhY0BnbWFpbC5jb20iLCJhZGRyZXNzIjoicGhvbmVObyIsInBob25lTm8iOm51bGwsImNvdW50cnkiOiJLRW55YSIsImZ1bGxuYW1lIjoiUVdFRUQiLCJlbWFpbFNlbnQiOiIwIiwiaWF0IjoxNjc2NDc2NDY4LCJleHAiOjE2ODAwNzY0Njh9.m2JBxcAgyKWxrbXneMiDEfxc0zvQQrarm1GXc4V-GYA"
